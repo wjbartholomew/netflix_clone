@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from './axios.js';
 import requests from './requests.js';
+import banner from './Banner.css';
 
 function Banner() {
 
@@ -21,6 +22,10 @@ function Banner() {
 
     console.log(movie);
 
+    function truncate(string, n){
+        return string?.length > n? string.substr(0, n-1) + "...": string;
+    }
+
     return (
         <header 
         className="banner" 
@@ -36,8 +41,15 @@ function Banner() {
             <div className="banner_contents">
 
             {/* title */}
-            <h1 className="title">
+            <h1 className="banner_title">
                 {movie?.title || movie?.name || movie?.original_name}
+            </h1>
+            <div className="banner_buttons">
+                <button className="banner_button">Play</button>
+                <button className="banner_button">My List</button>
+            </div>
+            <h1 className="banner_ description">
+                {truncate(movie?.overview, 150)}
             </h1>
             <div>
 
