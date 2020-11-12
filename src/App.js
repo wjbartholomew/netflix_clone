@@ -3,13 +3,14 @@ import Row from './Row.js';
 import './App.css';
 import requests from './requests.js';
 import Banner from './Banner.js';
+import Nav from './nav';
 
 function App() {
   return (
     <div className="app">
-      {/* Nav Bar */}
-      {/* Banner */}
-      <Banner/>
+    
+     <Nav/>
+     <Banner/>
      <Row 
      title = "NETFLIX ORIGINALS" 
      fetchUrl={requests.fetchNetflixOriginals} 
